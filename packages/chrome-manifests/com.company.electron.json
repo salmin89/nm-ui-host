@@ -1,0 +1,7 @@
+{
+  "name": "com.company.electron",
+  "description": "electron-app",
+  "path": "{{PATH}}/ui-messaging-host/apps/electron-app/out/electron-app-darwin-arm64/electron-app.app/Contents/MacOS/electron-app",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://foagfmjipiakglkcldlfofngdpmklnja/"]
+}

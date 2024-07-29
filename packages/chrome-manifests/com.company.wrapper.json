@@ -1,0 +1,7 @@
+{
+  "name": "com.company.wrapper",
+  "description": "wrapper",
+  "path": "{{path}}/ui-messaging-host/wrapper.sh",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://foagfmjipiakglkcldlfofngdpmklnja/"]
+}

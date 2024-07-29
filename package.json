@@ -1,7 +1,8 @@
 {
-  "name": "my-turborepo",
+  "name": "ui-messaging-host",
   "private": true,
   "scripts": {
+    "start": "turbo start",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
@@ -9,11 +10,15 @@
   },
   "devDependencies": {
     "prettier": "^3.2.5",
-    "turbo": "^2.0.7",
+    "turbo": "^2.0.9",
     "typescript": "^5.4.5"
   },
-  "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "packageManager": "npm@8.19.4",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

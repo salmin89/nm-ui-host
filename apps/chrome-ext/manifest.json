@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "NMHost Example",
+  "version": "1.0.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArifxSHgWxGpCWuquezKEWUSB9lmWnKCHBVdoKHOG/NKonN5oFDYp4i0fAyGmL5tSsad3sI4ylW0yUQ/3+P16a1Z/A75DA+fdZ4ZiIbfSF81neWudOhyvNridhOagJCU3ssTEtQAn2lA9vMh8674A6+Fan7MEPhrQ8dt6RY225W72SlzFYFoSeqkiNIambMoyVs8dNylmpYzSnFOftReEgrF3sDKEKUwL5Qbv56BnF11WDkTHIg41N+0ijo/+VjD+XQg3el3xZf2BrOrJY2CL+m7qOZCeHPwGGko1zArFot7phMt9S/05JzyKFCyjKV2UZkZQH+f2zDClDMy1H1FF6wIDAQAB",
+  "permissions": [
+    "nativeMessaging"
+  ],
+  "action": {},
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}

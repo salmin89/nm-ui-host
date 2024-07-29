@@ -1,0 +1,7 @@
+{
+  "name": "com.company.nodejs",
+  "description": "nodejs",
+  "path": "{{path}}/ui-messaging-host/apps/nodejs/index.js",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://foagfmjipiakglkcldlfofngdpmklnja/"]
+}
