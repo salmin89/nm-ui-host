@@ -11,7 +11,8 @@ let mainWindow;
 
 const msgQueue = [];
 
-const createResponseFn = require('./nmh');
+// TODO - import from host-examples
+const createResponseFn = require('./my_current').createResponseFn;
 
 const sendResponse = createResponseFn(handleMessage);
 
