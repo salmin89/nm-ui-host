@@ -9,5 +9,8 @@
     "build": "node index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "host-examples": "^1.0.0"
+  }
 }

@@ -59,9 +59,12 @@
   // Convert JavaScript to TypeScript, no obvious equivalent with tsc
   // https://www.codeconvert.ai/javascript-to-typescript-converter
   const runtime: string = navigator.userAgent;
+  // @ts-ignore
   const buffer: ArrayBuffer = new ArrayBuffer(0, { maxByteLength: 1024 ** 2 });
+  // @ts-ignore
   const view: DataView = new DataView(buffer);
   const encoder: TextEncoder = new TextEncoder();
+  // @ts-ignore
   const { dirname, filename, url } = import.meta;
   
   let readable: ReadableStream<Uint8Array>,
@@ -69,14 +72,15 @@
     exit: () => void,
     args: string[];
   
-  if (runtime.startsWith("Deno")) {
-    ({ readable } = Deno.stdin);
-    ({ writable } = Deno.stdout);
-    ({ exit } = Deno);
-    ({ args } = Deno);
-  }
+  // if (runtime.startsWith("Deno")) {
+  //   ({ readable } = Deno.stdin);
+  //   ({ writable } = Deno.stdout);
+  //   ({ exit } = Deno);
+  //   ({ args } = Deno);
+  // }
   
   if (runtime.startsWith("Node")) {
+  // @ts-ignore
     readable = process.stdin;
     writable = new WritableStream({
       write(value) {
@@ -87,16 +91,16 @@
     ({ argv: args } = process);
   }
   
-  if (runtime.startsWith("Bun")) {
-    readable = Bun.file("/dev/stdin").stream();
-    writable = new WritableStream<Uint8Array>({
-      async write(value) {
-        await Bun.write(Bun.stdout, value);
-      },
-    }, new CountQueuingStrategy({ highWaterMark: Infinity }));
-    ({ exit } = process);
-    ({ argv: args } = Bun);
-  }
+  // if (runtime.startsWith("Bun")) {
+  //   readable = Bun.file("/dev/stdin").stream();
+  //   writable = new WritableStream<Uint8Array>({
+  //     async write(value) {
+  //       await Bun.write(Bun.stdout, value);
+  //     },
+  //   }, new CountQueuingStrategy({ highWaterMark: Infinity }));
+  //   ({ exit } = process);
+  //   ({ argv: args } = Bun);
+  // }
   
   function encodeMessage(message: any): Uint8Array {
     return encoder.encode(JSON.stringify(message));
@@ -105,7 +109,9 @@
   async function* getMessage(): AsyncGenerator<Uint8Array> {
     let messageLength: number = 0;
     let readOffset: number = 0;
+  // @ts-ignore
     for await (let message of readable) {
+  // @ts-ignore
       if (buffer.byteLength === 0) {
         buffer.resize(4);
         for (let i = 0; i < 4; i++) {
@@ -115,11 +121,14 @@
         message = message.subarray(4);
         buffer.resize(0);
       }
+  // @ts-ignore
       buffer.resize(buffer.byteLength + message.length);
       for (let i = 0; i < message.length; i++, readOffset++) {
         view.setUint8(readOffset, message[i]);
       }
+  // @ts-ignore
       if (buffer.byteLength === messageLength) {
+  // @ts-ignore
         yield new Uint8Array(buffer);
         messageLength = 0;
         readOffset = 0;
@@ -147,7 +156,6 @@
     exit();
   }
   
-  /*
   export {
     args,
     encodeMessage,
@@ -157,4 +165,3 @@
     sendMessage,
     writable,
   };
-  */
