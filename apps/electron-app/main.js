@@ -4,6 +4,7 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('node:path');
 
+/** @type BrowserWindow */
 let mainWindow;
 
 const msgQueue = [];
@@ -27,7 +28,7 @@ function handleMessage(msg) {
 
 const createWindow = () => {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
+  const mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
     webPreferences: {
