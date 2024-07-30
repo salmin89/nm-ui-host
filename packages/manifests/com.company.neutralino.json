@@ -1,7 +1,7 @@
 {
   "name": "com.company.neutralino",
   "description": "neutralino",
-  "path": "{{path}}/ui-messaging-host/apps/neutralino-app/dist/neutralino-app/neutralino-app-mac_arm64",
+  "path": "{{PATH}}/apps/neutralino-app/dist/neutralino-app/neutralino-app-mac_arm64",
   "type": "stdio",
   "allowed_origins": ["chrome-extension://foagfmjipiakglkcldlfofngdpmklnja/"]
 }

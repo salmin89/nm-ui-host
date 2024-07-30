@@ -4,15 +4,13 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('node:path');
 
-
-
-
 let mainWindow;
 
 const msgQueue = [];
 
-// TODO - import from host-examples
-const createResponseFn = require('./my_current').createResponseFn;
+// const createResponseFn = require('@hosts/lib').my_current.createResponseFn;
+// TODO: electron forge sucks https://github.com/electron/forge/issues/2306
+const createResponseFn = require('../../packages/lib/js/my_current').createResponseFn;
 
 const sendResponse = createResponseFn(handleMessage);
 

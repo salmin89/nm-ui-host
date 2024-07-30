@@ -7,7 +7,8 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "build": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "link:lib": "npm link ../../packages/lib/"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +27,6 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "host-examples": "^1.0.0"
+    "@hosts/lib": "^1.0.0"
   }
 }

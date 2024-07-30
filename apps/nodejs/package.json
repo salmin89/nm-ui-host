@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "host-examples": "^1.0.0"
+    "@hosts/lib": "^1.0.0"
   }
 }
